@@ -1,8 +1,8 @@
+#  FOR PRACTICE PURPOSE
+
 
 from fastapi import FastAPI
 from pydantic import BaseModel
-
-
 
 app = FastAPI()
 
@@ -30,10 +30,6 @@ def contact():
     return {"email": "support@example.com"}
 
 
-
-
-
-
 class LoginData(BaseModel):
     username: str
     password: str
@@ -59,8 +55,6 @@ def add_product(product: Product):
     products.append(product)
     return product
 
-
-
 # Path parameter route
 @app.get("/items/{item_id}")
 def read_me(item_id: int):
@@ -75,3 +69,4 @@ def read_item(q: int = 0):
 @app.get("/users/{user_id}/items/")
 def get_user_items(user_id: int, q: str = None):
     return {"user_id": user_id, "query": q}
+    
